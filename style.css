@@ -1,0 +1,149 @@
+.qv-object-KpiTable2 div.qv-object-content-container {
+    overflow: auto;
+    font-family: QlikView Sans,sans-serif;
+    color: rgb(89, 89, 89);
+    line-height: 16px;
+}
+
+/* GENERAL */
+.qv-object-KpiTable2 .text-left {
+    text-align: left;
+}
+
+.qv-object-KpiTable2 .text-center {
+    text-align: center;
+}
+
+.qv-object-KpiTable2 .text-right {
+    text-align: right;
+}
+
+.qv-object-KpiTable .text-type1 {
+    font-family: QlikView Sans,sans-serif !important;
+}
+
+.qv-object-KpiTable2 .text-success {
+    color: rgb(0, 176, 80);
+}
+
+.qv-object-KpiTable2 .text-danger {
+    color: #f05555;
+}
+
+.qv-object-KpiTable2 .text-warning {
+    color: #ffcd07;
+}
+
+.qv-object-KpiTable2 .text-info {
+    color: #67BEE7;
+}
+
+.qv-object-KpiTable2 .text-bold {
+    font-weight: bold;
+}
+
+.qv-object-KpiTable2 .text-italic {
+    font-style: italic;
+}
+
+.qv-object-KpiTable2 .text-group {
+    color: midnightblue;
+    font-size: 20px;
+}
+
+.qv-object-KpiTable2 .text-title {
+    font-size: 15px;
+    font-weight: bold !important;
+}
+.qv-object-KpiTable2 .text-subtitle {
+    font-size: 10px;
+}
+
+.qv-object-KpiTable2 .bg-white {
+    background-color: white;
+}
+
+.qv-object-KpiTable2 .bg-white {
+    background-color: white;
+}
+.qv-object-KpiTable2 .bg-group {
+    background-color: #eaeef1 !important;
+}
+
+.qv-object-KpiTable2 .bd-r-child {
+   border-right-style: solid;
+   border-right-width: 2px;
+   border-right-color: darkblue;
+   padding-top:10px;
+}
+
+#eaeef1 !important
+/* GENERAL END */
+/* TABLE */
+.qv-object-KpiTable2 .table-formated {
+    vertical-align: middle;
+    color: #494949;
+}
+.qv-object-KpiTable2 .table-formated > thead {
+    background-color: #003366;
+    color: #f6f6f7;
+}
+
+    .qv-object-KpiTable2 .table-formated > thead > tr {
+        height: 40px;
+    }
+
+        .qv-object-KpiTable2 .table-formated > thead > tr > th {
+            vertical-align: middle;
+            padding: 3px;
+        }
+
+.qv-object-KpiTable2 .table-formated > tbody > tr > td {
+    padding: 3px;
+}
+
+/*.qv-object-KpiTable2 .table-formated > tbody > tr:nth-child(even) {
+    background-color: #f2f2f2;
+}*/
+
+.qv-object-KpiTable2 .strip-opaque {
+    background-color: #f2f2f2 !important;
+}
+
+.qv-object-KpiTable2 .totals {
+    border-bottom: 1px solid rgb(180, 180, 180) !important;
+}
+
+/** TABLE END */
+
+.qv-object-KpiTable2 .index-group {
+    border-color: darkblue;
+    background-color: #0065B2;
+    color: white;
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 18px;
+    padding: 4px;
+    margin: auto;
+}
+
+.qv-object-KpiTable2 .index-row {
+    border: 1px solid;
+    border-color: #0065B2;
+    background-color: #0065B2;
+    color: #DADCDE;
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 2px;
+    margin: auto;
+}
+
+
+.qv-object-KpiTable2 .more {
+    width: 100%;
+}
