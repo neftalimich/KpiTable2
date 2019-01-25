@@ -220,7 +220,6 @@
                 if ($scope.layout.props.columnOrder) {
                     try {
                         let splitString = $scope.layout.props.columnOrder.split(',');
-                        console.log(splitString);
                         for (let i = 0; i < splitString.length; i++) {
                             if (!isNaN(splitString[i])) {
                                 $scope.columnOrder.push(parseInt(splitString[i]));
