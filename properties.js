@@ -30,7 +30,7 @@ define([
         items: {
             dimensions: {
                 uses: "dimensions",
-                min: 4,
+                min: 5,
                 items: {
                     textAlign: {
                         type: "string",
@@ -374,7 +374,7 @@ define([
                                 type: "string",
                                 ref: "props.columnOrder",
                                 label: "Column Order",
-                                defaultValue: ""
+                                defaultValue: "1,2,3,4,5"
                             },
                             selectedSheet: {
                                 type: "string",

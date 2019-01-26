@@ -41,7 +41,7 @@
                 $scope.SetTableIndex();
                 angular.element(document).ready(function () {
                     $scope.GroupData();
-
+                    $scope.SetColumnOrder();
                     $timeout(function () {
                         $scope.LoadCharts("");
                     }, 1000);
@@ -139,7 +139,7 @@
                         angular.forEach(group.data, function (level1, key) {
                             let keeptGoing = true;
                             angular.forEach(level1.dataL1, function (level2, index) {
-                                if (keeptGoing && level2.item[3].qText === "") {
+                                if (keeptGoing && level2.item[4].qText === "1") {
                                     level1.parentL1 = level2;
                                     level1.dataL1.splice(index, 1);
                                     group.countItems -= 1;
@@ -176,7 +176,7 @@
                             let keeptGoing = true;
                             angular.forEach(level1.dataL1, function (level2, index) {
                                 //console.log(key, level2, level2.item[3].qText);
-                                if (keeptGoing && level2.item[3].qText === "") {
+                                if (keeptGoing && level2.item[4].qText === "1") {
                                     level1.parentL1 = level2;
                                     level1.dataL1.splice(index, 1);
                                     keeptGoing = false;
