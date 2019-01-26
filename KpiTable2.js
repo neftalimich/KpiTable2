@@ -464,10 +464,10 @@
                         categoriesAux.push(item[dimLength - 1].qText);
                     });
 
-                    if ($("#chart2-" + group.name).length) {
-                        //console.log(seriesAux);
-                        Highcharts.chart("chart2-" + group.name, {
+                    $(".chart2-" + group.name).each(function () {
+                        Highcharts.chart({
                             chart: {
+                                renderTo: this,
                                 backgroundColor: 'rgba(255, 255, 255, 0.0)'
                             },
                             title: {
@@ -502,7 +502,7 @@
                             },
                             credits: { enabled: false }
                         });
-                    }
+                    });
                 });
 
 

@@ -81,8 +81,8 @@
                         </span>
                     </td>
                     <td ng-show="layout.props.showChart" class="text-center">
-                        <div ng-style="{'height':layout.props.chartHeight,'width':layout.props.chartWidth}" style="margin:auto">
-                            <div id="{{'chart2-' + table.rows[level1.parentL1.index].cells[0].qText}}" style="width:100%;height:100%;overflow: no-display !important;margin:auto;"></div>
+                        <div ng-style="{'height':layout.props.chartHeight,'width':layout.props.chartWidth}" ng-click="GoUrl(table.rows[rowAux.index].cells[0].qText)" style="margin:auto">
+                            <div class="{{'chart2-' + table.rows[level1.parentL1.index].cells[0].qText}}" style="width:100%;height:100%;overflow: no-display !important;margin:auto;"></div>
                         </div>
                     </td>
                     <td ng-show="layout.props.showHelpIcon" class="text-center">
@@ -132,8 +132,8 @@
                         <!--SubtitleEnd-->
                     </td>
                     <td ng-show="layout.props.showChart" class="text-center">
-                        <div ng-style="{'height':layout.props.chartHeight,'width':layout.props.chartWidth}" style="margin:auto">
-                            <div id="{{'chart2-' + table.rows[rowAux.index].cells[0].qText}}" style="width:100%;height:100%;overflow: no-display !important;margin:auto;"></div>
+                        <div ng-style="{'height':layout.props.chartHeight,'width':layout.props.chartWidth}" ng-click="GoUrl(table.rows[rowAux.index].cells[0].qText)" style="margin:auto">
+                            <div class="{{'chart2-' + table.rows[rowAux.index].cells[0].qText}}" style="width:100%;height:100%;overflow: no-display !important;margin:auto;"></div>
                         </div>
                     </td>
                     <td ng-show="layout.props.showHelpIcon" class="text-center">
