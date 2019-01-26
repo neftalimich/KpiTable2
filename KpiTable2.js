@@ -27,12 +27,11 @@
             //setup scope.table
             if (!this.$scope.table) {
                 this.$scope.table = qlik.table(this);
-                console.log("KpiTable2 - Table", this.$scope.table);
             }
             return qlik.Promise.resolve();
         },
         controller: ['$scope', '$timeout', function ($scope, $timeout) {
-            console.log("KpiTable2 - layout", $scope.layout);
+            $scope.kpiTableId = $scope.layout.qInfo.qId;
             $scope.dimLength = 0;
             $scope.meaLength = 0;
 
@@ -82,7 +81,6 @@
                         });
                     });
                 });
-                //console.log("tableIndex", $scope.tableIndex);
             };
             // ------------------------------- More Data
             $scope.loading = false;
@@ -102,7 +100,6 @@
                             $scope.NextPageCube2();
                         });
                 }
-                //console.log("table",table);
                 return true;
             };
             // -------------------------------
@@ -169,13 +166,10 @@
                         let level1 = Object.keys(level1Aux).map(function (key) {
                             return { name: key, dataL1: level1Aux[key] };
                         });
-                        //console.log(level1);
                         group.data = level1;
                         angular.forEach(group.data, function (level1, key) {
-                            //console.log(key, level1);
                             let keeptGoing = true;
                             angular.forEach(level1.dataL1, function (level2, index) {
-                                //console.log(key, level2, level2.item[3].qText);
                                 if (keeptGoing && level2.item[4].qText === "1") {
                                     level1.parentL1 = level2;
                                     level1.dataL1.splice(index, 1);
@@ -197,7 +191,6 @@
                     });
                 });
 
-                //console.log("cubeGrouped", $scope.cubeGrouped);
                 $scope.LoadCharts("cube1Grouped");
             };
 
@@ -240,7 +233,6 @@
                             }
                         }
                     } catch (err) {
-                        console.log(err);
                     }
                 } else {
                     for (let i = 0; i < dimLength + meaLength; i++) {
@@ -413,7 +405,6 @@
                         });
                     }
                 }
-                //console.log("cube2Grouped", $scope.cube2Grouped);
             };
             // ------------------------------- 
             var charts = [];
@@ -428,7 +419,6 @@
             };
             // ------------------------------- 
             $scope.LoadCharts = function (test) {
-                //console.log(test);
                 $scope.ClearCharts();
                 let key = $scope.layout.qInfo.qId;
                 let dimLength = $scope.layout.cube2.qHyperCube.qDimensionInfo.length;
@@ -522,6 +512,7 @@
             $scope.origin = document.location.origin;
             $scope.protocol = document.location.protocol;
             $scope.ShowFrame = function (id) {
+                console.log('id',id);
                 $scope.sFrame = true;
 
                 //$scope.idk = $scope.origin + $scope.layout.props.urlIframe + id;
@@ -529,9 +520,10 @@
                 app.field("KPI_ID").selectMatch(id, !1);
 
                 app.visualization.get('DmEgZQe').then(function (vis) {
+                    console.log('Si entra', vis);
                     vis.show("QV01" + $scope.kpiTableId);
                 });
-                app.visualization.get('JPGG').then(function (vis) {
+                app.visualization.get('gMbXj').then(function (vis) {
                     vis.show("QV02" + $scope.kpiTableId);
                 });
                 app.visualization.get('mwCjpFF').then(function (vis) {
@@ -576,7 +568,7 @@
                 app.visualization.get('JbEZRf').then(function (vis) {
                     vis.show("QV17" + $scope.kpiTableId);
                 });
-                app.visualization.get('BgLJ').then(function (vis) {
+                app.visualization.get('dLgLdDC').then(function (vis) {
                     vis.show("QV18" + $scope.kpiTableId);
                 });
                 app.visualization.get('pzFnee').then(function (vis) {
