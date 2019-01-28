@@ -3,7 +3,7 @@
   "description": "Table visualization template based on angular.js",
   "icon": "table",
   "type": "visualization",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "author": "",
   "homepage": "",
   "keywords": "qlik-sense, visualization",

@@ -200,7 +200,7 @@
                     });
                 });
 
-                console.log("cubeGrouped", $scope.cubeGrouped);
+                //console.log("cubeGrouped", $scope.cubeGrouped);
                 $scope.LoadCharts("cube1Grouped");
             };
 
@@ -225,7 +225,9 @@
                         let splitString = $scope.layout.props.columnOrder.split(',');
                         for (let i = 0; i < splitString.length; i++) {
                             if (!isNaN(splitString[i])) {
-                                $scope.columnOrder.push(parseInt(splitString[i]));
+                                if (parseInt(splitString[i]) < dimLength + meaLength) {
+                                    $scope.columnOrder.push(parseInt(splitString[i]));
+                                }
                             }
                         }
                         if (splitString.length != dimLength + meaLength) {
@@ -243,7 +245,7 @@
                             }
                         }
                     } catch (err) {
-                        console.log(err);
+                        //console.log(err);
                     }
                 } else {
                     for (let i = 0; i < dimLength + meaLength; i++) {
