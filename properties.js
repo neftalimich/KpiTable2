@@ -133,6 +133,21 @@ define([
                         expression: "optional",
                         defaultValue: ""
                     },
+                    expressionTitle: {
+                        type: "string",
+                        component: "expression",
+                        ref: "qAttributeExpressions.1.qExpression",
+                        label: "Expression Title",
+                        expression: "optional",
+                        defaultValue: ""
+                    },
+                    colspanTitle: {
+                        type: "number",
+                        ref: "qDef.pColspanTitle",
+                        label: "Colspan Title",
+                        expression: "optional",
+                        defaultValue: 1
+                    },
                     textClass: {
                         type: "string",
                         label: "Text Class",

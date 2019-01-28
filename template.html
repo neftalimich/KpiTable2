@@ -7,18 +7,32 @@
                 <tr>
                     <th style="width:30px;" ng-show="layout.props.showGroups && layout.props.showGroupIndex"></th>
                     <th ng-repeat="col in columnOrder track by $index"
-                        class="{{table.headers[col].qMeasureInfo.pTextAlign || table.headers[col].qDimensionInfo.pTextAlign}}
-                        {{$index > 1 ? '':'ng-hide'}} {{$index == 3 || $index == 5 ? 'ng-hide':''}}
+                        class="{{table.headers[col].qMeasureInfo.pColspanTitle > 1 ? 'text-center':(table.headers[col].qMeasureInfo.pTextAlign || table.headers[col].qDimensionInfo.pTextAlign)}}
+                        {{$index > 1 ? '':'ng-hide'}} {{$index == 3 || $index == 5 ? 'ng-hide':''}} {{table.headers[col].qMeasureInfo.pColspanTitle==0 ? 'ng-hide':''}}
                         {{table.headers[col].qDimensionInfo.pSubtitle &&  $index > 2 ? 'ng-hide':''}} text-type1"
                         style="font-size: {{layout.props.headerFontSize}}; width:{{table.headers[col].qMeasureInfo.pColumnSize || table.headers[col].qDimensionInfo.pColumnSize}}"
-                        ng-click="table.headers[col].orderBy();">
-                        {{table.headers[col].qFallbackTitle}}
+                        ng-click="table.headers[col].orderBy();" rowspan="{{table.headers[col].qMeasureInfo.qAttrExprInfo[1].qFallbackTitle ? 1:2}}"
+                        colspan="{{table.headers[col].qMeasureInfo.pColspanTitle}}">
+                        <span ng-show="!table.headers[col].qMeasureInfo.qAttrExprInfo[1].qFallbackTitle && (table.headers[col].qMeasureInfo.pColspanTitle > 0 || $index < dimLength)">
+                            {{table.headers[col].qFallbackTitle}}
+                        </span>
+                        <span ng-show="table.headers[col].qMeasureInfo.qAttrExprInfo[1].qFallbackTitle">
+                            {{table.headers[col].qMeasureInfo.qAttrExprInfo[1].qFallbackTitle}}
+                        </span>
                     </th>
-                    <th ng-show="layout.props.showChart" class="text-center text-type1" style="font-size: {{layout.props.headerSize}}">
+                    <th ng-show="layout.props.showChart" class="text-center text-type1" style="font-size: {{layout.props.headerSize}}" rowspan="2">
                         Hist&oacute;rico Gr&aacute;fica
                     </th>
-                    <th style="width:30px;" ng-show="layout.props.showHelpIcon">
+                    <th style="width:30px;" ng-show="layout.props.showHelpIcon" rowspan="2">
 
+                    </th>
+                </tr>
+                <tr>
+                    <th ng-repeat="col in columnOrder track by $index"
+                        class="{{table.headers[col].qMeasureInfo.pTextAlign || table.headers[col].qDimensionInfo.pTextAlign}}
+                        {{$index < dimLength ? 'ng-hide':''}} 
+                        {{table.headers[col].qMeasureInfo.qAttrExprInfo[1].qFallbackTitle || table.headers[col].qMeasureInfo.pColspanTitle==0 ? '':'ng-hide'}}">
+                        {{table.headers[col].qFallbackTitle}}
                     </th>
                 </tr>
                 <tr class="totals" ng-show="layout.props.showTotals">
