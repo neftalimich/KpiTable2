@@ -47,7 +47,8 @@
             <tbody style="font-size: {{layout.props.bodyFontSize}}">
                 <tr ng-repeat-start="group in cubeGrouped track by $index" ng-init="$groupIndex = $index" class="bg-group">
                     <td colspan="{{dimLength + meaLength}}" ng-show="layout.props.showGroups">
-                        <span class="text-group">{{$groupIndex + 1}}. {{group.name}}</span>
+                        <!--<span class="text-group">{{$groupIndex + 1}}. {{group.name}}</span>-->
+                        <span class="text-group">{{group.name}}</span>
                     </td>
                 </tr>
                 <tr ng-repeat-start="level1 in group.data track by $index" ng-init="$level1Index = $index"></tr>
@@ -62,7 +63,7 @@
                             <i class="fas fa-plus-circle" ng-show="level1.hide"></i>
                             <i class="fas fa-minus-circle" ng-show="!level1.hide"></i>
                             <span class="text-title">
-                                {{level1.description}} <span ng-show="level1.hide">({{level1.index + 1}})</span>
+                                <span ng-show="level1.dataL1.length == 0 || level1.hide">{{level1.index + 1}}. </span>{{level1.description}} <span ng-show="level1.hide">({{level1.dataL1.length}})</span>
                             </span>
                         </span>
                         <span>
@@ -107,8 +108,8 @@
                     <td rowspan="{{level1.dataL1.length}}" ng-show="$rowIndex == 0 && layout.props.showRowIndex"
                         class="text-center text-bold bd-r-child" style="width:30px;">
                         <span ng-click="CollapseChilds(level1, group)" style="cursor:pointer">
-                            <i class="fas fa-plus-circle" ng-show="level1.hide"></i>
-                            <i class="fas fa-minus-circle" ng-show="!level1.hide"></i>
+                            <!--<i class="fas fa-plus-circle" ng-show="level1.hide"></i>
+                            <i class="fas fa-minus-circle" ng-show="!level1.hide"></i>-->
                             {{level1.index + 1}}
                         </span>
                     </td>
