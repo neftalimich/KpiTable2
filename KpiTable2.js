@@ -27,12 +27,13 @@
             //setup scope.table
             if (!this.$scope.table) {
                 this.$scope.table = qlik.table(this);
-                console.log("KpiTable2 - Table", this.$scope.table);
+                //console.log("KpiTable2 - Table", this.$scope.table);
             }
             return qlik.Promise.resolve();
         },
         controller: ['$scope', '$timeout', function ($scope, $timeout) {
-            console.log("KpiTable2 - layout", $scope.layout);
+            //console.log("KpiTable2 - layout", $scope.layout);
+            $scope.kpiTableId = $scope.layout.qInfo.qId;
             $scope.dimLength = 0;
             $scope.meaLength = 0;
 
@@ -133,14 +134,15 @@
                             return obj;
                         }, {});
                         let level1 = Object.keys(level1Aux).map(function (key) {
-                            return { name: key, dataL1: level1Aux[key] };
+                            return { name: key, description:'', dataL1: level1Aux[key] };
                         });
                         group.data = level1;
                         angular.forEach(group.data, function (level1, key) {
                             let keeptGoing = true;
                             angular.forEach(level1.dataL1, function (level2, index) {
-                                if (keeptGoing && level2.item[4].qText === "1") {
+                                if (keeptGoing && level2.item[5].qText === "1") {
                                     level1.parentL1 = level2;
+                                    level1.description = level2.item[3].qText;
                                     level1.dataL1.splice(index, 1);
                                     group.countItems -= 1;
                                     keeptGoing = false;
@@ -176,8 +178,9 @@
                             let keeptGoing = true;
                             angular.forEach(level1.dataL1, function (level2, index) {
                                 //console.log(key, level2, level2.item[3].qText);
-                                if (keeptGoing && level2.item[4].qText === "1") {
+                                if (keeptGoing && level2.item[5].qText === "1") {
                                     level1.parentL1 = level2;
+                                    level1.description = level2.item[3].qText;
                                     level1.dataL1.splice(index, 1);
                                     keeptGoing = false;
                                 }
@@ -197,7 +200,7 @@
                     });
                 });
 
-                //console.log("cubeGrouped", $scope.cubeGrouped);
+                console.log("cubeGrouped", $scope.cubeGrouped);
                 $scope.LoadCharts("cube1Grouped");
             };
 
@@ -531,7 +534,7 @@
                 app.visualization.get('DmEgZQe').then(function (vis) {
                     vis.show("QV01" + $scope.kpiTableId);
                 });
-                app.visualization.get('JPGG').then(function (vis) {
+                app.visualization.get('gMbXj').then(function (vis) {
                     vis.show("QV02" + $scope.kpiTableId);
                 });
                 app.visualization.get('mwCjpFF').then(function (vis) {
@@ -576,7 +579,7 @@
                 app.visualization.get('JbEZRf').then(function (vis) {
                     vis.show("QV17" + $scope.kpiTableId);
                 });
-                app.visualization.get('BgLJ').then(function (vis) {
+                app.visualization.get('dLgLdDC').then(function (vis) {
                     vis.show("QV18" + $scope.kpiTableId);
                 });
                 app.visualization.get('pzFnee').then(function (vis) {
