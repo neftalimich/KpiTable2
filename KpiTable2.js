@@ -517,6 +517,7 @@
 
             // ------------------------------- Extra
             $scope.GoUrl = function (id) {
+                //console.log(id);
                 if (id.length > 0) {
                     app.field($scope.layout.props.chartfield).selectMatch(id, !1);
                     qlik.navigation.gotoSheet($scope.layout.props.selectedSheet);

@@ -11,12 +11,12 @@
                         {{$index > 1 ? '':'ng-hide'}} {{$index == 3 || $index == 5 ? 'ng-hide':''}} {{table.headers[col].qMeasureInfo.pColspanTitle==0 ? 'ng-hide':''}}
                         {{table.headers[col].qDimensionInfo.pSubtitle &&  $index > 2 ? 'ng-hide':''}} text-type1"
                         style="font-size: {{layout.props.headerFontSize}}; width:{{table.headers[col].qMeasureInfo.pColumnSize || table.headers[col].qDimensionInfo.pColumnSize}}"
-                        ng-click="table.headers[col].orderBy();" rowspan="{{table.headers[col].qMeasureInfo.qAttrExprInfo[1].qFallbackTitle ? 1:2}}"
+                        ng-click="table.headers[col].orderBy();" rowspan="{{table.headers[col].qMeasureInfo.qAttrExprInfo[1].qMaxText ? 1:2}}"
                         colspan="{{table.headers[col].qMeasureInfo.pColspanTitle}}">
-                        <span ng-show="!table.headers[col].qMeasureInfo.qAttrExprInfo[1].qFallbackTitle && (table.headers[col].qMeasureInfo.pColspanTitle > 0 || $index < dimLength)">
+                        <span ng-show="!table.headers[col].qMeasureInfo.qAttrExprInfo[1].qMaxText && (table.headers[col].qMeasureInfo.pColspanTitle > 0 || $index < dimLength)">
                             {{table.headers[col].qFallbackTitle}}
                         </span>
-                        <span ng-show="table.headers[col].qMeasureInfo.qAttrExprInfo[1].qFallbackTitle">
+                        <span ng-show="table.headers[col].qMeasureInfo.qAttrExprInfo[1].qMaxText">
                             {{table.headers[col].qMeasureInfo.qAttrExprInfo[1].qMaxText}}
                         </span>
                     </th>
@@ -62,9 +62,9 @@
                         <span ng-click="CollapseChilds(level1, group)" style="cursor:pointer">
                             <i class="fas fa-plus-circle" ng-show="level1.hide"></i>
                             <i class="fas fa-minus-circle" ng-show="!level1.hide"></i>
-                            <span class="text-title">
-                                <span ng-show="level1.dataL1.length == 0 || level1.hide">{{level1.index + 1}}. </span>{{level1.description}} <span ng-show="level1.hide">({{level1.dataL1.length}})</span>
-                            </span>
+                        </span>
+                        <span class="text-title" ng-click="GoUrl(level1.parentL1.item[0].qText)">
+                            <span ng-show="level1.dataL1.length == 0 || level1.hide">{{level1.index + 1}}. </span>{{level1.description}} <span ng-show="level1.hide">({{level1.dataL1.length}})</span>
                         </span>
                         <span>
                             <br />
@@ -95,7 +95,7 @@
                         </span>
                     </td>
                     <td ng-show="layout.props.showChart" class="text-center">
-                        <div ng-style="{'height':layout.props.chartHeight,'width':layout.props.chartWidth}" ng-click="GoUrl(table.rows[rowAux.index].cells[0].qText)" style="margin:auto">
+                        <div ng-style="{'height':layout.props.chartHeight,'width':layout.props.chartWidth}" ng-click="GoUrl(table.rows[level1.parentL1.index].cells[0].qText)" style="margin:auto">
                             <div class="{{'chart2-' + table.rows[level1.parentL1.index].cells[0].qText}}" style="width:100%;height:100%;overflow: no-display !important;margin:auto;"></div>
                         </div>
                     </td>
