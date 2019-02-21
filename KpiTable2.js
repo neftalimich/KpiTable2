@@ -472,6 +472,7 @@
                     $(".chart2-" + group.name).each(function () {
                         Highcharts.chart({
                             chart: {
+                                type: "line",
                                 renderTo: this,
                                 backgroundColor: 'rgba(255, 255, 255, 0.0)'
                             },

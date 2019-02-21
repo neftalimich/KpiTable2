@@ -85,8 +85,8 @@
     color: #494949;
 }
 .qv-object-KpiTable2 .table-formated > thead {
-    background-color: #003366;
-    color: #f6f6f7;
+    background-color: #79b1e2;
+    color: #fafafa;
 }
 
     .qv-object-KpiTable2 .table-formated > thead > tr {
@@ -146,4 +146,13 @@
 
 .qv-object-KpiTable2 .more {
     width: 100%;
+}
+.qv-object-KpiTable2 .info-bg1{
+    background-color: #f2d954;
+}
+.qv-object-KpiTable2 .info-bg2{
+    background-color: #edc649;
+}
+.qv-object-KpiTable2 .dots{
+    color: #ffffff;
 }
