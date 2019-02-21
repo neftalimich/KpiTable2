@@ -147,11 +147,8 @@
 .qv-object-KpiTable2 .more {
     width: 100%;
 }
-.qv-object-KpiTable2 .info-bg1{
+.qv-object-KpiTable2 .info-bg{
     background-color: #f2d954;
-}
-.qv-object-KpiTable2 .info-bg2{
-    background-color: #edc649;
 }
 .qv-object-KpiTable2 .dots{
     color: #ffffff;

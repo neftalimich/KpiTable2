@@ -314,13 +314,13 @@
                     }
                 });
 
-                $scope.backendApi.applyPatches([
-                    {
-                        "qPath": "/cube2/qHyperCubeDef/qDimensions",
-                        "qOp": "replace",
-                        "qValue": JSON.stringify(qDimensions)
-                    }
-                ], false);
+                // $scope.backendApi.applyPatches([
+                //     {
+                //         "qPath": "/cube2/qHyperCubeDef/qDimensions",
+                //         "qOp": "replace",
+                //         "qValue": JSON.stringify(qDimensions)
+                //     }
+                // ], false);
             });
             $scope.$watchCollection("layout.cube2Measures", function (newVal) {
                 let qMeasures = [];
@@ -338,13 +338,13 @@
                     }
                 });
 
-                $scope.backendApi.applyPatches([
-                    {
-                        "qPath": "/cube2/qHyperCubeDef/qMeasures",
-                        "qOp": "replace",
-                        "qValue": JSON.stringify(qMeasures)
-                    }
-                ], false);
+                // $scope.backendApi.applyPatches([
+                //     {
+                //         "qPath": "/cube2/qHyperCubeDef/qMeasures",
+                //         "qOp": "replace",
+                //         "qValue": JSON.stringify(qMeasures)
+                //     }
+                // ], false);
             });
             $scope.$watchCollection("layout.cube2.qHyperCube.qDataPages", function (newVal) {
                 angular.element(document).ready(function () {
