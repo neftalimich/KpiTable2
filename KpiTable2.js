@@ -320,7 +320,13 @@
                         "qOp": "replace",
                         "qValue": JSON.stringify(qDimensions)
                     }
-                ], false);
+                ], false).then(function (greeting) {
+                    console.log('Success: ', greeting);
+                }, function (reason) {
+                    console.log('Failed: ', reason);
+                }, function (update) {
+                    console.log('Got notification: ', update);
+                });
             });
             $scope.$watchCollection("layout.cube2Measures", function (newVal) {
                 let qMeasures = [];
@@ -344,7 +350,13 @@
                         "qOp": "replace",
                         "qValue": JSON.stringify(qMeasures)
                     }
-                ], false);
+                ], false).then(function (greeting) {
+                    console.log('Success: ', greeting);
+                }, function (reason) {
+                    console.log('Failed: ', reason);
+                }, function (update) {
+                    console.log('Got notification: ', update);
+                });
             });
             $scope.$watchCollection("layout.cube2.qHyperCube.qDataPages", function (newVal) {
                 angular.element(document).ready(function () {
