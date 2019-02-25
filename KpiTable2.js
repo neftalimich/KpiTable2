@@ -1,4 +1,4 @@
-﻿define([
+define([
     "qlik",
     "jquery",
     "./initial-properties",
@@ -452,7 +452,7 @@
 
                     angular.forEach(group.data, function (item, key) {
                         seriesAux[0].data.push({
-                            y: parseFloat(item[dimLength].qText),
+                            y: parseFloat(item[dimLength].qText.replace(',','')),
                             marker: {
                                 fillColor: item[dimLength].qAttrExps != null && item[dimLength].qAttrExps.qValues[0].qText ? item[dimLength].qAttrExps.qValues[0].qText : "rgba(0,0,0,0)",
                                 lineColor: item[dimLength].qAttrExps != null && item[dimLength].qAttrExps.qValues[1].qText ? item[dimLength].qAttrExps.qValues[1].qText : "rgba(0,0,0,0)",
