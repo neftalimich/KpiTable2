@@ -537,11 +537,8 @@ define([
                 app.visualization.get('DmEgZQe').then(function (vis) {
                     vis.show("QV01" + $scope.kpiTableId);
                 });
-                app.visualization.get('gMbXj').then(function (vis) {
+                app.visualization.get('aEyjJ').then(function (vis) {
                     vis.show("QV02" + $scope.kpiTableId);
-                });
-                app.visualization.get('mwCjpFF').then(function (vis) {
-                    vis.show("QV03" + $scope.kpiTableId);
                 });
                 app.visualization.get('Mjkjwcr').then(function (vis) {
                     vis.show("QV04" + $scope.kpiTableId);
@@ -557,9 +554,6 @@ define([
                 });
                 app.visualization.get('EbZfLZT').then(function (vis) {
                     vis.show("QV08" + $scope.kpiTableId);
-                });
-                app.visualization.get('DPGLNAd').then(function (vis) {
-                    vis.show("QV09" + $scope.kpiTableId);
                 });
                 app.visualization.get('JTMxZMZ').then(function (vis) {
                     vis.show("QV11" + $scope.kpiTableId);
@@ -581,9 +575,6 @@ define([
                 });
                 app.visualization.get('JbEZRf').then(function (vis) {
                     vis.show("QV17" + $scope.kpiTableId);
-                });
-                app.visualization.get('dLgLdDC').then(function (vis) {
-                    vis.show("QV18" + $scope.kpiTableId);
                 });
                 app.visualization.get('pzFnee').then(function (vis) {
                     vis.show("QV19" + $scope.kpiTableId);
