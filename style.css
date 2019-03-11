@@ -1,10 +1,13 @@
 .qv-object-KpiTable2 div.qv-object-content-container {
     overflow: auto;
-    font-family: QlikView Sans,sans-serif;
+    font-family: Circular Medium, QlikView Sans, sans-serif !important;
+    /* font-family: QlikView Sans,sans-serif; */
     color: rgb(89, 89, 89);
     line-height: 16px;
 }
-
+.qv-object-KpiTable2 tbody {
+    font-family: Circular Medium, QlikView Sans, sans-serif !important;
+}
 /* GENERAL */
 .qv-object-KpiTable2 .text-left {
     text-align: left;
@@ -18,8 +21,14 @@
     text-align: right;
 }
 
-.qv-object-KpiTable .text-type1 {
-    font-family: QlikView Sans,sans-serif !important;
+.qv-object-KpiTable2 .text-type1 {
+    font-family: Circular Medium, QlikView Sans, sans-serif !important;
+    /* font-family: QlikView Sans,sans-serif !important; */
+}
+
+.qv-object-KpiTable2 .text-type1 span {
+    font-family: Circular Medium, QlikView Sans, sans-serif !important;
+    /* font-family: QlikView Sans,sans-serif !important; */
 }
 
 .qv-object-KpiTable2 .text-success {
@@ -33,7 +42,9 @@
 .qv-object-KpiTable2 .text-warning {
     color: #ffcd07;
 }
-
+.qv-object-KpiTable2 tr td span{
+    font-family: Circular Medium, QlikView Sans, sans-serif !important;
+ }
 .qv-object-KpiTable2 .text-info {
     color: #67BEE7;
 }
@@ -49,11 +60,13 @@
 .qv-object-KpiTable2 .text-group {
     color: midnightblue;
     font-size: 20px;
+    font-family: Circular Medium, QlikView Sans, sans-serif !important;
 }
 
 .qv-object-KpiTable2 .text-title {
     font-size: 15px;
     font-weight: bold !important;
+    font-family: Circular Medium, QlikView Sans, sans-serif !important;
 }
 .qv-object-KpiTable2 .text-subtitle {
     font-size: 10px;
