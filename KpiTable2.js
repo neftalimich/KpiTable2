@@ -27,7 +27,7 @@ define([
             //setup scope.table
             if (!this.$scope.table) {
                 this.$scope.table = qlik.table(this);
-                //console.log("KpiTable2 - Table", this.$scope.table);
+                // console.log("KpiTable2 - Table", this.$scope.table);
             }
             return qlik.Promise.resolve();
         },
@@ -94,7 +94,7 @@ define([
                         .then(val => {
                         })
                         .catch(err => {
-                            console.error("Tabla");
+                            // console.error("Tabla");
                             $scope.table = null;
                         })
                         .finally(f => {

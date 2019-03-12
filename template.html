@@ -59,10 +59,13 @@
                         <span class="text-bold">{{$groupIndex + 1}}</span>
                     </td>
                     <td colspan="2">
-                        <span ng-click="CollapseChilds(level1, group)" style="cursor:pointer">
-                            <i class="fas fa-plus-circle" ng-show="level1.hide"></i>
-                            <i class="fas fa-minus-circle" ng-show="!level1.hide"></i>
-                            <span class="text-title">
+                        <span style="cursor:pointer">
+                            <div ng-click="CollapseChilds(level1, group)">
+                                <i class="fas fa-plus-circle" ng-show="level1.hide"></i>
+                                <i class="fas fa-minus-circle" ng-show="!level1.hide"></i>
+                            </div>
+                            
+                            <span class="text-title" ng-click="GoUrl(level1.parentL1.item[0].qText)">
                                 <span ng-show="level1.dataL1.length == 0 || level1.hide">{{level1.index + 1}}. </span>{{level1.description}} <span ng-show="level1.hide">({{level1.dataL1.length}})</span>
                             </span>
                         </span>
@@ -120,7 +123,7 @@
                             {{table.rows[rowAux.index].cells[col].qDimensionInfo.pSubtitle &&  $cellIndex > 2 ? 'ng-hide':''}}"
                         style="font-size: {{table.rows[rowAux.index].cells[col].qMeasureInfo.pFontSize || table.rows[rowAux.index].cells[col].qDimensionInfo.pFontSize}}; padding-left:5px !important;">
                         <!--CellChild-->
-                        <span class="{{table.rows[rowAux.index].cells[col].qMeasureInfo.pTextClass || table.rows[rowAux.index].cells[col].qDimensionInfo.pTextClass}}
+                        <span ng-click="GoUrl(table.rows[rowAux.index].cells[0].qText)" class="{{table.rows[rowAux.index].cells[col].qMeasureInfo.pTextClass || table.rows[rowAux.index].cells[col].qDimensionInfo.pTextClass}}
                               {{layout.qHyperCube.qDataPages[tableIndex[rowAux.index].page].qMatrix[tableIndex[rowAux.index].index][$cellIndex].qAttrExps.qValues[0].qText}}
                               {{table.rows[rowAux.index].cells[col].qMeasureInfo.pType==0 || table.rows[rowAux.index].cells[col].qDimensionInfo.pType==0 ? '':'ng-hide'}}">
                             {{table.rows[rowAux.index].cells[col].qText}}
@@ -146,7 +149,7 @@
                         <!--SubtitleEnd-->
                     </td>
                     <td ng-show="layout.props.showChart" class="text-center">
-                        <div ng-style="{'height':layout.props.chartHeight,'width':layout.props.chartWidth}" ng-click="GoUrl(level1.parentL1.item[0].qText)" style="margin:auto">
+                        <div ng-style="{'height':layout.props.chartHeight,'width':layout.props.chartWidth}" ng-click="GoUrl(table.rows[rowAux.index].cells[0].qText)" style="margin:auto">
                             <div class="{{'chart2-' + table.rows[rowAux.index].cells[0].qText}}" style="width:100%;height:100%;overflow: no-display !important;margin:auto;"></div>
                         </div>
                     </td>

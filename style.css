@@ -65,7 +65,7 @@
 
 .qv-object-KpiTable2 .text-title {
     font-size: 15px;
-    font-weight: bold !important;
+    /* font-weight: bold !important; */
     font-family: Circular Medium, QlikView Sans, sans-serif !important;
 }
 .qv-object-KpiTable2 .text-subtitle {
