@@ -60,10 +60,10 @@
                     </td>
                     <td colspan="2">
                         <span style="cursor:pointer">
-                            <div ng-click="CollapseChilds(level1, group)">
+                            <span ng-click="CollapseChilds(level1, group)">
                                 <i class="fas fa-plus-circle" ng-show="level1.hide"></i>
                                 <i class="fas fa-minus-circle" ng-show="!level1.hide"></i>
-                            </div>
+                            </span>
                             
                             <span class="text-title" ng-click="GoUrl(level1.parentL1.item[0].qText)">
                                 <span ng-show="level1.dataL1.length == 0 || level1.hide">{{level1.index + 1}}. </span>{{level1.description}} <span ng-show="level1.hide">({{level1.dataL1.length}})</span>
