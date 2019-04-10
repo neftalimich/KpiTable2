@@ -463,8 +463,9 @@
                     });
 
                     angular.forEach(group.data, function (item, key) {
+                        let yAux = parseFloat(item[dimLength].qText);
                         seriesAux[0].data.push({
-                            y: parseFloat(item[dimLength].qText),
+                            y: yAux == 0 ? null : yAux,
                             marker: {
                                 fillColor: item[dimLength].qAttrExps != null && item[dimLength].qAttrExps.qValues[0].qText ? item[dimLength].qAttrExps.qValues[0].qText : "rgba(0,0,0,0)",
                                 lineColor: item[dimLength].qAttrExps != null && item[dimLength].qAttrExps.qValues[1].qText ? item[dimLength].qAttrExps.qValues[1].qText : "rgba(0,0,0,0)",
