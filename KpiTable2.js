@@ -463,7 +463,7 @@
                     });
 
                     angular.forEach(group.data, function (item, key) {
-                        let yAux = parseFloat(item[dimLength].qText);
+                        let yAux = parseFloat(item[dimLength].qText.replace(',', '0'));
                         seriesAux[0].data.push({
                             y: yAux == 0 ? null : yAux,
                             marker: {
