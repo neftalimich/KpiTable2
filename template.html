@@ -63,10 +63,10 @@
                             <i class="fas fa-plus-circle" ng-show="level1.hide"></i>
                             <i class="fas fa-minus-circle" ng-show="!level1.hide"></i>
                         </span>
-                        <span class="text-title" ng-click="GoUrl(level1.parentL1.item[0].qText)">
+                        <span class="text-title" ng-click="GoUrl(level1.parentL1.item[0].qText)" ng-show="level1.description">
                             <span ng-show="level1.dataL1.length == 0 || level1.hide">{{level1.index + 1}}. </span>{{level1.description}} <span ng-show="level1.hide">({{level1.dataL1.length}})</span>
                         </span>
-                        <span>
+                        <span ng-show="level1.description">
                             <br />
                             <span ng-repeat="subtitle in table.rows[level1.parentL1.index].cells track by $index" ng-init="$subtitleIndex = $index"
                                   class="text-subtitle text-type1
@@ -81,26 +81,29 @@
                             {{$cellIndex > 5 ? '':'ng-hide'}}
                             {{table.rows[level1.parentL1.index].cells[col].qDimensionInfo.pSubtitle &&  $cellIndex > 3 ? 'ng-hide':''}}"
                         style="font-size: {{table.rows[level1.parentL1.index].cells[col].qMeasureInfo.pFontSize || table.rows[level1.parentL1.index].cells[col].qDimensionInfo.pFontSize}};">
-                        <span class="{{table.rows[level1.parentL1.index].cells[col].qMeasureInfo.pTextClass || table.rows[level1.parentL1.index].cells[col].qDimensionInfo.pTextClass}}
+                        <!-- Columns -->
+                        <div class="" ng-show="level1.description">
+                            <span class="{{table.rows[level1.parentL1.index].cells[col].qMeasureInfo.pTextClass || table.rows[level1.parentL1.index].cells[col].qDimensionInfo.pTextClass}}
                                 {{layout.qHyperCube.qDataPages[tableIndex[level1.parentL1.index].page].qMatrix[tableIndex[level1.parentL1.index].index][$cellIndex].qAttrExps.qValues[0].qText}}
                                 {{table.rows[level1.parentL1.index].cells[col].qMeasureInfo.pType==0 || table.rows[level1.parentL1.index].cells[col].qDimensionInfo.pType==0 ? '':'ng-hide'}}">
-                            {{table.rows[level1.parentL1.index].cells[col].qText}}
-                        </span>
-                        <i class="{{table.rows[level1.parentL1.index].cells[col].qMeasureInfo.pIconClass || table.rows[level1.parentL1.index].cells[col].qDimensionInfo.pIconClass}}"></i>
-                        <span ng-show="table.rows[level1.parentL1.index].cells[col].qMeasureInfo.pType==1 || table.rows[level1.parentL1.index].cells[col].qDimensionInfo.pType==1"
-                              ng-bind-html="table.rows[level1.parentL1.index].cells[col].qText">
-                        </span>
-                        <span ng-show="table.rows[level1.parentL1.index].cells[col].qMeasureInfo.pType==2 || table.rows[level1.parentL1.index].cells[col].qDimensionInfo.pType==2">
-                            <i class="{{table.rows[level1.parentL1.index].cells[col].qText}}"></i>
-                        </span>
+                                {{table.rows[level1.parentL1.index].cells[col].qText}}
+                            </span>
+                            <i class="{{table.rows[level1.parentL1.index].cells[col].qMeasureInfo.pIconClass || table.rows[level1.parentL1.index].cells[col].qDimensionInfo.pIconClass}}"></i>
+                            <span ng-show="table.rows[level1.parentL1.index].cells[col].qMeasureInfo.pType==1 || table.rows[level1.parentL1.index].cells[col].qDimensionInfo.pType==1"
+                                  ng-bind-html="table.rows[level1.parentL1.index].cells[col].qText">
+                            </span>
+                            <span ng-show="table.rows[level1.parentL1.index].cells[col].qMeasureInfo.pType==2 || table.rows[level1.parentL1.index].cells[col].qDimensionInfo.pType==2">
+                                <i class="{{table.rows[level1.parentL1.index].cells[col].qText}}"></i>
+                            </span>
+                        </div>
                     </td>
                     <td ng-show="layout.props.showChart" class="text-center">
-                        <div ng-style="{'height':layout.props.chartHeight,'width':layout.props.chartWidth}" ng-click="GoUrl(table.rows[level1.parentL1.index].cells[0].qText)" style="margin:auto">
+                        <div ng-style="{'height':layout.props.chartHeight,'width':layout.props.chartWidth}" ng-click="GoUrl(table.rows[level1.parentL1.index].cells[0].qText)" style="margin:auto" ng-show="level1.description">
                             <div class="{{'chart2-' + table.rows[level1.parentL1.index].cells[0].qText}}" style="width:100%;height:100%;overflow: no-display !important;margin:auto;"></div>
                         </div>
                     </td>
                     <td ng-show="layout.props.showHelpIcon" class="text-center">
-                        <i class="fas fa-info-circle fa-lg text-info" ng-click="ShowFrame(table.rows[level1.parentL1.index].cells[0].qText)"></i>
+                        <i class="fas fa-info-circle fa-lg text-info" ng-click="ShowFrame(table.rows[level1.parentL1.index].cells[0].qText)" ng-show="level1.description"></i>
                     </td>
                 </tr>
                 <tr ng-repeat-end ng-repeat-start="rowAux in level1.dataL1 track by $index" ng-init="$rowIndex = $index" ng-show="!level1.hide"
